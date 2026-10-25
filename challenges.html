@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Create habits and track your daily progress.">
+  <title>Challenges & Progress — Habit Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <script src="js/storage.js" defer></script>
+  <script src="js/challenges.js" defer></script>
+</head>
+<body>
+  <header class="navbar">
+    <a href="index.html" class="logo"><i data-lucide="sprout"></i><span>Habit Tracker</span></a>
+    <nav class="nav-links" aria-label="Main navigation"><a href="index.html">Home</a><a href="challenges.html" class="active">Challenges</a><a href="timer.html">Focus Timer</a></nav>
+    <a href="timer.html" class="button button-small button-secondary">Focus timer <i data-lucide="timer"></i></a>
+  </header>
+
+  <main class="container page-main">
+    <section class="page-heading">
+      <span class="eyebrow"><i data-lucide="calendar-check"></i> YOUR PERSONAL RESET</span>
+      <h1>Challenges & <span>progress.</span></h1>
+      <p>Choose a habit, show up each day, and let the small wins add up.</p>
+    </section>
+
+    <section class="stats-grid" aria-label="Your overall progress">
+      <article class="stat-card"><div class="stat-icon"><i data-lucide="layers"></i></div><span class="stat-label">Active challenges</span><strong id="stat-active">0</strong></article>
+      <article class="stat-card"><div class="stat-icon"><i data-lucide="check-circle-2"></i></div><span class="stat-label">Days completed</span><strong id="stat-completed">0</strong></article>
+      <article class="stat-card"><div class="stat-icon"><i data-lucide="flame"></i></div><span class="stat-label">Best current streak</span><strong id="stat-streak">0 days</strong></article>
+    </section>
+
+    <section class="section compact-section">
+      <div class="section-heading">
+        <div><span class="eyebrow">PICK YOUR PATH</span><h2>Start a challenge</h2><p class="section-subtitle">Create a challenge and track each day.</p></div>
+      </div>
+      <form id="custom-challenge-form" class="panel custom-form">
+        <div class="panel-heading"><div><span class="eyebrow">MAKE IT YOURS</span><h3>Create a custom challenge</h3></div><div class="icon-box"><i data-lucide="plus"></i></div></div>
+        <div class="form-grid">
+          <label class="field">Category
+            <select id="custom-category">
+              <option value="Study">Study</option>
+              <option value="Exercise">Exercise</option>
+              <option value="Reading">Reading</option>
+              <option value="Sleep">Sleep</option>
+              <option value="Personal">Personal growth</option>
+              <option value="custom">Create my own category</option>
+            </select>
+          </label>
+          <label class="field" id="custom-category-wrap" hidden>Custom category
+            <input id="custom-category-name" type="text" maxlength="35" placeholder="e.g. Mindfulness">
+          </label>
+          <label class="field field-wide">Challenge name<input id="custom-name" type="text" maxlength="50" placeholder="e.g. Learn a new skill" required></label>
+          <label class="field">Duration<select id="custom-duration"><option value="7">7 days</option><option value="14">14 days</option><option value="20">20 days</option><option value="30" selected>30 days</option><option value="60">60 days</option><option value="90">90 days</option><option value="custom">Custom duration</option></select></label>
+          <label class="field" id="custom-days-wrap" hidden>Number of days<input id="custom-days" type="number" min="1" max="365" value="30" inputmode="numeric"></label>
+        </div>
+        <button class="button button-primary" type="submit">Create challenge <i data-lucide="arrow-right"></i></button>
+        <p class="form-help">Choose a category or create your own. You can run multiple challenges at once.</p>
+      </form>
+    </section>
+
+    <section class="section compact-section" id="progress-section">
+      <div class="section-heading"><div><span class="eyebrow">YOUR CONSISTENCY</span><h2>Your challenges</h2></div></div>
+      <div id="challenge-list" class="challenge-list"></div>
+      <div id="empty-state" class="empty-state panel">
+        <div class="empty-icon"><i data-lucide="sprout"></i></div>
+        <h3>Your first challenge starts here.</h3>
+        <p>Create your first challenge above to begin tracking your progress.</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="celebration" class="celebration-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="celebration-title">
+    <div class="celebration-card">
+      <button class="icon-button celebration-close" id="close-celebration" aria-label="Close celebration"><i data-lucide="x"></i></button>
+      <div class="trophy-medallion"><i data-lucide="trophy"></i></div>
+      <span class="eyebrow">THAT'S A WIN</span>
+      <h2 id="celebration-title">Day completed!</h2>
+      <p id="celebration-message">You showed up for yourself today. Keep going!</p>
+      <button class="button button-primary" id="celebration-done">Keep going <i data-lucide="arrow-right"></i></button>
+      <div class="confetti-layer" id="confetti-layer" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <footer class="footer container">
+    <div class="footer-brand">
+      <a href="index.html" class="logo"><i data-lucide="sprout"></i><span>Habit Tracker</span></a>
+      <p class="footer-tagline">One small step is equal to big change.</p>
+    </div>
+    <div class="footer-meta">
+      <p class="creator-credit">Created by Muhammad Ali</p>
+      <span>© 2026 Habit Tracker</span>
+    </div>
+  </footer>
+</body>
+</html>

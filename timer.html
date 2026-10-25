@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Focus on one thing at a time with the Habit Tracker focus timer.">
+  <title>Focus Timer — Habit Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <script src="js/storage.js" defer></script>
+  <script src="js/timer.js" defer></script>
+</head>
+<body>
+  <header class="navbar">
+    <a href="index.html" class="logo"><i data-lucide="sprout"></i><span>Habit Tracker</span></a>
+    <nav class="nav-links" aria-label="Main navigation"><a href="index.html">Home</a><a href="challenges.html">Challenges</a><a href="timer.html" class="active">Focus Timer</a></nav>
+    <a href="challenges.html" class="button button-small button-secondary">My challenges <i data-lucide="calendar-check"></i></a>
+  </header>
+
+  <main class="container page-main timer-page">
+    <section class="page-heading centered-heading">
+      <span class="eyebrow"><i data-lucide="timer"></i> MAKE SPACE TO FOCUS</span>
+      <h1>One thing at <span>a time.</span></h1>
+      <p>Choose a session, put distractions aside, and give your attention to what matters.</p>
+    </section>
+
+    <section class="timer-panel panel">
+      <div class="timer-topline"><span class="timer-status"><span class="status-dot" id="timer-status-dot"></span><span id="timer-status">Ready when you are</span></span><span class="small-label">FOCUS SESSION</span></div>
+      <div class="timer-ring" id="timer-ring">
+        <div class="timer-ring-inner">
+          <span class="timer-label" id="timer-label">TIME TO FOCUS</span>
+          <strong id="timer-display" aria-live="off">20:00</strong>
+          <span class="timer-subtitle" id="timer-subtitle">A little progress counts.</span>
+        </div>
+      </div>
+      <div class="timer-presets" aria-label="Timer presets">
+        <button class="preset-button selected" data-minutes="20">20 min</button>
+        <button class="preset-button" data-minutes="30">30 min</button>
+        <button class="preset-button" data-minutes="60">60 min</button>
+      </div>
+      <form id="custom-timer-form" class="custom-timer-form">
+        <label for="custom-minutes" class="field">Custom minutes</label>
+        <div class="custom-timer-controls"><input id="custom-minutes" type="number" min="1" max="240" placeholder="e.g. 45"><button class="button button-secondary" type="submit">Set time</button></div>
+      </form>
+      <div class="timer-controls">
+        <button class="button button-primary timer-main-button" id="timer-start"><i data-lucide="play"></i><span>Start focus</span></button>
+        <button class="button button-secondary" id="timer-reset"><i data-lucide="rotate-ccw"></i> Reset</button>
+      </div>
+      <p class="timer-note"><i data-lucide="info"></i> This timer works independently. Finishing a session does not automatically complete a challenge.</p>
+    </section>
+
+    <section class="timer-tips">
+      <article><div class="icon-box"><i data-lucide="smartphone"></i></div><h3>Remove distractions</h3><p>Put your phone away and close unnecessary tabs.</p></article>
+      <article><div class="icon-box"><i data-lucide="target"></i></div><h3>Pick one task</h3><p>Decide what you want to finish before starting.</p></article>
+      <article><div class="icon-box"><i data-lucide="coffee"></i></div><h3>Take a short break</h3><p>When you're done, stretch and reset your mind.</p></article>
+    </section>
+  </main>
+
+  <div id="timer-celebration" class="celebration-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="timer-celebration-title">
+    <div class="celebration-card">
+      <button class="icon-button celebration-close" id="timer-celebration-close" aria-label="Close celebration"><i data-lucide="x"></i></button>
+      <div class="trophy-medallion"><i data-lucide="trophy"></i></div>
+      <span class="eyebrow">FOCUS SESSION COMPLETE</span>
+      <h2 id="timer-celebration-title">You did it!</h2>
+      <p>You gave your attention to what matters. Take a breath and enjoy the win.</p>
+      <button class="button button-primary" id="timer-celebration-done">Nice work <i data-lucide="check"></i></button>
+      <div class="confetti-layer" id="timer-confetti-layer" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <footer class="footer container">
+    <div class="footer-brand">
+      <a href="index.html" class="logo"><i data-lucide="sprout"></i><span>Habit Tracker</span></a>
+      <p class="footer-tagline">One small step is equal to big change.</p>
+    </div>
+    <div class="footer-meta">
+      <p class="creator-credit">Created by Muhammad Ali</p>
+      <span>© 2026 Habit Tracker</span>
+    </div>
+  </footer>
+</body>
+</html>

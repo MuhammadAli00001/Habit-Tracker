@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Build better habits, one day at a time, with Habit Tracker.">
+  <title>Habit Tracker — Small steps. Big change.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <script src="js/storage.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <header class="navbar">
+    <a href="index.html" class="logo"><i data-lucide="sprout"></i><span>Habit Tracker</span></a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html" class="active">Home</a>
+      <a href="challenges.html">Challenges</a>
+      <a href="timer.html">Focus Timer</a>
+    </nav>
+    <a href="challenges.html" class="button button-small button-primary">Get started <i data-lucide="arrow-up-right"></i></a>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero-content">
+        <span class="eyebrow"><i data-lucide="leaf"></i> A LITTLE BETTER, EVERY DAY</span>
+        <h1>Small steps.<br><span>Big change.</span></h1>
+        <p class="hero-description">Build better habits, stay consistent, and become the person you want to be — one day at a time.</p>
+        <div class="hero-actions">
+          <a href="challenges.html" class="button button-primary">Start your challenge <i data-lucide="arrow-right"></i></a>
+          <a href="#how-it-works" class="button button-secondary">How it works</a>
+        </div>
+        <p class="hero-note"><i data-lucide="check-circle-2"></i> Progress over perfection.</p>
+      </div>
+
+      <div class="hero-card">
+        <div class="hero-card-top">
+          <div><span class="small-label">YOUR NEXT CHAPTER</span><h2>One day at a time.</h2></div>
+          <div class="icon-box icon-box-large"><i data-lucide="sprout"></i></div>
+        </div>
+        <div class="quote-box">
+          <i data-lucide="quote"></i>
+          <p>You don't need to change everything today. Just start with one small action.</p>
+        </div>
+        <div class="mini-progress">
+          <div class="mini-progress-heading"><span>Your progress</span><span>Keep going</span></div>
+          <div class="progress-track"><span style="width: 68%"></span></div>
+        </div>
+        <div class="hero-card-bottom"><span class="status-dot"></span><span>Your journey begins with one choice.</span></div>
+      </div>
+    </section>
+
+    <section class="home-challenges container" aria-labelledby="home-challenges-title">
+      <div class="section-heading"><div><span class="eyebrow">BUILD YOUR ROUTINE</span><h2 id="home-challenges-title">Challenges</h2></div></div>
+      <div class="home-challenge-grid">
+        <a class="home-challenge-card" href="challenges.html"><span class="home-challenge-icon"><i data-lucide="book-open"></i></span><h3>Study Better</h3><p>Make focused study time a daily habit.</p><span class="home-card-link">Start challenge <i data-lucide="arrow-right"></i></span></a>
+        <a class="home-challenge-card" href="challenges.html"><span class="home-challenge-icon"><i data-lucide="dumbbell"></i></span><h3>Exercise</h3><p>Move your body and build energy.</p><span class="home-card-link">Start challenge <i data-lucide="arrow-right"></i></span></a>
+        <a class="home-challenge-card" href="challenges.html"><span class="home-challenge-icon"><i data-lucide="book-open"></i></span><h3>Read More</h3><p>Read a few pages every day.</p><span class="home-card-link">Start challenge <i data-lucide="arrow-right"></i></span></a>
+        <a class="home-challenge-card" href="challenges.html"><span class="home-challenge-icon"><i data-lucide="moon"></i></span><h3>Better Sleep</h3><p>Create a calmer sleep routine.</p><span class="home-card-link">Start challenge <i data-lucide="arrow-right"></i></span></a>
+      </div>
+    </section>
+
+    <section class="home-month-calendar container" aria-label="Monthly habit completion calendar">
+      <div class="section-heading"><div><span class="eyebrow">YOUR DAILY PROGRESS</span><h2>Calendar</h2></div></div>
+      <div class="month-calendar" id="home-month-calendar"></div>
+    </section>
+
+    <section class="section container" id="how-it-works">
+      <div class="section-heading"><div><span class="eyebrow">KEEP IT SIMPLE</span><h2>Three steps to a better routine.</h2></div></div>
+      <div class="steps-grid">
+        <article class="step-card"><span class="step-number">01</span><i data-lucide="target"></i><h3>Choose a challenge</h3><p>Pick a habit or create one that fits your goals.</p></article>
+        <article class="step-card"><span class="step-number">02</span><i data-lucide="calendar-check"></i><h3>Show up daily</h3><p>Mark your day complete and watch your progress grow.</p></article>
+        <article class="step-card"><span class="step-number">03</span><i data-lucide="trophy"></i><h3>Celebrate progress</h3><p>Build your streak and celebrate every milestone.</p></article>
+      </div>
+    </section>
+
+    <section class="final-cta container">
+      <div><span class="eyebrow">YOUR FUTURE SELF WILL THANK YOU</span><h2>Ready to begin?</h2><p>Choose one small habit. Start today.</p></div>
+      <a href="challenges.html" class="button button-primary">Choose your challenge <i data-lucide="arrow-right"></i></a>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    <div class="footer-brand">
+      <a href="index.html" class="logo"><i data-lucide="sprout"></i><span>Habit Tracker</span></a>
+      <p class="footer-tagline">One small step is equal to big change.</p>
+    </div>
+    <div class="footer-meta">
+      <p class="creator-credit">Created by Muhammad Ali</p>
+      <span>© 2026 Habit Tracker</span>
+    </div>
+  </footer>
+</body>
+</html>
